@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
+
+<form method="POST" action="/users/{{user.id}}/edit">
+  <div class="mb-3">
+    <label for="first_name" class="form-label">First Name</label>
+    <input
+      placeholder="Enter a first name"
+      name="first_name"
+      class="form-control"
+      id="first_name"
+      value="{{user.first_name}}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="last_name" class="form-label">Last Name</label>
+    <input
+      placeholder="Enter a last name"
+      name="last_name"
+      class="form-control"
+      id="last_name"
+      value="{{user.last_name}}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="image_url" class="form-label">Image URL</label>
+    <input
+      placeholder="Provide and image of this user"
+      name="image_url"
+      class="form-control"
+      id="exampleInputPassword1"
+      value="{{user.image_url}}"
+    />
+  </div>
+
+  <button class="btn btn-success">Save</button>
+  <a href="/users/{{user.id}}"
+    ><button class="btn btn-outline">Cancel</button></a
+  >
+</form>
+{% endblock %}
